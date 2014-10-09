@@ -4,17 +4,47 @@ window.onload = function ()
     var c = document.getElementById("modules");
     var ctx = c.getContext("2d");
 
-    // Load the data from the database
-    var analysis = importData("data/analysisIII.json");
-    
-    // Try and parse the JSON
-    var module = JSON.parse(analysis);
+    var modules = ["data/algebraII.json", "data/algebraI.json"];
 
-    var current_module = new Module(module);
-    var module_img = current_module.makeModule(ctx);
-    ctx.putImageData(module_img, 50, 50);
+    var module_imgs = loadModules(modules, ctx);
 
+    var index;
+    var y = 10;
 
+    for (index = 0 ; index < module_imgs.length ; index++)
+    {
+        ctx.putImageData(module_imgs[index], 10, y*(index + 1));
+    }
+
+}
+
+// Function to load the module data base
+//      modules: an array containing all the filepaths of the module data
+//      context: details of the canvas to draw on
+function loadModules(modules, context)
+{
+    // A varible to keep track of the array index
+    var index;
+    var moduleArray = [];
+    var module;
+    var module_data;
+    var url;
+
+    for (index = 0; index < modules.length ; index++)
+    {
+        // Load the module data
+        url = modules[index];
+        module_data = importData(url);
+
+        // Parse the JSON
+        module = new Module(module_data);
+
+        // Get the Module representation
+        moduleArray[moduleArray.length] = module.makeModule(context);
+    }
+
+    // Return the list of modules
+    return moduleArray;
 }
 
 // Constructor for a module, takes the following argument
@@ -30,6 +60,8 @@ function Module(moduleData)
     // This function draws the module 'box' on screen takes one argument
     //          canvasContext: the context associated with the canvas we
     //                         draw on
+    //
+    //  It returns the image data representing the module
     function makeModule(canvasContext)
     {
         canvasContext.fillStyle = "#FF0000";
