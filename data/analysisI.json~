@@ -1,7 +1,0 @@
-{
-    "module" : {
-                "name": "Analysis II",
-                "year": 1,
-                "requirements": ["Analysis I"]
-    }
-}
