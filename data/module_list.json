@@ -1,9 +1,9 @@
 {
     "module_list": [
-        "Analysis I" : "data/analysisI.json",
-        "Analysis II" : "data/analysisII.json",
-        "Analysis III" : "data/analysisIII.json",
-        "Algebra I" : "data/algebraI.json",
-        "Algebra II": "data/algebraII.json"
+        {"url" : "data/analysisI.json"},
+        {"url" : "data/analysisII.json"},
+        {"url" : "data/analysisIII.json"},
+        {"url" : "data/algebraI.json"},
+        {"url" : "data/algebraII.json"}
     ]
 }
