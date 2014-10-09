@@ -1,3 +1,7 @@
+/*
+ * This function gets run whenever the page is loaded so for now this is acting as our
+ * main control function
+ */
 window.onload = function ()
 {
     // Load the canvas and get a 2d context
@@ -15,39 +19,58 @@ window.onload = function ()
     }
 
 }
+// {{{ --------------------------------------------- Course Class ----------------------------------------
 
-// Function to load the module data base
-//      module_list: a url to the JSON file containing all the filepaths of the module data
-//      context: details of the canvas to draw on
-function loadModules(module_list, context)
+/*
+ * We are going to wrap everything in a "Course" Class it will handle
+ * all the logic on the placement of the modules and handles their inter
+ * dependencies
+ */
+
+// The main constructor class
+function Course(course, context)
 {
-    // First we need to load the module list
-    var mod_list_json = importData(module_list);
-    var mod_list = JSON.parse(mod_list_json);
 
-    // A varible to keep track of the array index
-    var index;
-    var moduleArray = [];
-    var module;
-    var module_data;
-    var module_json;
+    this.loadModules = loadModules;
 
-    for (index = 0; index < mod_list.module_list.length ; index++)
+    /*
+     * Function to load the module data base
+     *      module_list: a url to the JSON file containing all the filepaths of the module data
+     *      context: details of the canvas to draw on
+     */
+    function loadModules(module_list, context)
     {
-        // Load the module data
-        module_data = importData(mod_list.module_list[index].url);
-        module_json = JSON.parse(module_data);
+        // First we need to load the module list
+        var mod_list_json = importData(module_list);
+        var mod_list = JSON.parse(mod_list_json);
 
-        // Parse the JSON
-        module = new Module(module_json);
+        // A varible to keep track of the array index
+        var index;
+        var moduleArray = [];
+        var module;
+        var module_data;
+        var module_json;
 
-        // Get the Module representation
-        moduleArray[moduleArray.length] = module.makeModule(context);
+        for (index = 0; index < mod_list.module_list.length ; index++)
+        {
+            // Load the module data
+            module_data = importData(mod_list.module_list[index].url);
+            module_json = JSON.parse(module_data);
+
+            // Parse the JSON
+            module = new Module(module_json);
+
+            // Get the Module representation
+            moduleArray[moduleArray.length] = module.makeModule(context);
+        }
+
+        // Return the list of modules
+        return moduleArray;
     }
-
-    // Return the list of modules
-    return moduleArray;
 }
+// }}}
+
+// {{{ ----------------------------------------------- Module Class ----------------------------------------------
 
 // Constructor for a module, takes the following argument
 //          moduleData: The parsed JSON file object
@@ -76,6 +99,9 @@ function Module(moduleData)
         return box;
     }
 }
+// }}}
+
+// {{{  -------------------------------------------- Utility Functions -----------------------------
 
 // Function to load the JSON file from the database
 function importData(url)
@@ -86,6 +112,4 @@ function importData(url)
 
     return data_file.responseText;
 }
-
-    //ctx.fillStyle = "#FF0000"
-    //ctx.fillRect(0,0,150,75);
+// }}}
