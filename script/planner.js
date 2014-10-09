@@ -4,16 +4,16 @@ window.onload = function ()
     var c = document.getElementById("modules");
     var ctx = c.getContext("2d");
 
-    var modules = ["data/algebraII.json", "data/algebraI.json"];
+    var modules = ["data/analysisIII.json", "data/algebraII.json", "data/algebraI.json"];
 
     var module_imgs = loadModules(modules, ctx);
 
     var index;
-    var y = 10;
+    var y = 150;
 
     for (index = 0 ; index < module_imgs.length ; index++)
     {
-        ctx.putImageData(module_imgs[index], 10, y*(index + 1));
+        ctx.putImageData(module_imgs[index], 10, y*index);
     }
 
 }
@@ -28,6 +28,7 @@ function loadModules(modules, context)
     var moduleArray = [];
     var module;
     var module_data;
+    var module_json;
     var url;
 
     for (index = 0; index < modules.length ; index++)
@@ -35,9 +36,10 @@ function loadModules(modules, context)
         // Load the module data
         url = modules[index];
         module_data = importData(url);
+        module_json = JSON.parse(module_data);
 
         // Parse the JSON
-        module = new Module(module_data);
+        module = new Module(module_json);
 
         // Get the Module representation
         moduleArray[moduleArray.length] = module.makeModule(context);
