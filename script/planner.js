@@ -4,9 +4,7 @@ window.onload = function ()
     var c = document.getElementById("modules");
     var ctx = c.getContext("2d");
 
-    var modules = ["data/analysisIII.json", "data/algebraII.json", "data/algebraI.json"];
-
-    var module_imgs = loadModules(modules, ctx);
+    var module_imgs = loadModules("data/module_list.json", ctx);
 
     var index;
     var y = 150;
@@ -19,23 +17,25 @@ window.onload = function ()
 }
 
 // Function to load the module data base
-//      modules: an array containing all the filepaths of the module data
+//      module_list: a url to the JSON file containing all the filepaths of the module data
 //      context: details of the canvas to draw on
-function loadModules(modules, context)
+function loadModules(module_list, context)
 {
+    // First we need to load the module list
+    var mod_list_json = importData(module_list);
+    var mod_list = JSON.parse(mod_list_json);
+
     // A varible to keep track of the array index
     var index;
     var moduleArray = [];
     var module;
     var module_data;
     var module_json;
-    var url;
 
-    for (index = 0; index < modules.length ; index++)
+    for (index = 0; index < mod_list.module_list.length ; index++)
     {
         // Load the module data
-        url = modules[index];
-        module_data = importData(url);
+        module_data = importData(mod_list.module_list[index].url);
         module_json = JSON.parse(module_data);
 
         // Parse the JSON
