@@ -1,0 +1,7 @@
+{
+    "module" : {
+                "name": "Analysis III",
+                "year": 2,
+                "requirements": ["Analysis I", "Analysis II"]
+    }
+}
