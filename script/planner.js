@@ -24,6 +24,9 @@ window.onload = function ()
 
 }
 
+/*
+ * This function gets called whenever the window is resized
+ */
 window.onresize = function ()
 {
     var c = document.getElementById("modules");
@@ -43,7 +46,7 @@ window.onresize = function ()
 /*
  * The Course Class Constructor function
  *
- * Arguements:
+ * Arguments:
  *              course: The URL of the JSON file describing the contents of the course
  */
 function Course(course)
@@ -91,10 +94,10 @@ function Course(course)
 
     /*
      * Function that places the modules on screen, once this function
-     * works, it should not be changed the arrangement of the modules 
+     * works, it should not be changed the arrangement of the modules
      * should be governed by sortModules
      *
-     * Arguments: 
+     * Arguments:
      *              None
      *
      * Returns:
