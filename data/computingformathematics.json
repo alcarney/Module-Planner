@@ -1,8 +1,8 @@
 {
     "module" : {
-                "name": "Analysis I",
+                "name": "Computing for Mathematics",
                 "year": 1,
                 "requirements": ["None"],
-                "credits": 10
+                "credits": 20
     }
 }

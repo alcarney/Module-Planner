@@ -1,6 +1,6 @@
 {
     "module" : {
-                "name": "Analysis I",
+                "name": "Introduction to Dynamical Systems and Chaos",
                 "year": 1,
                 "requirements": ["None"],
                 "credits": 10
