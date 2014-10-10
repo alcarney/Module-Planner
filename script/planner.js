@@ -1,3 +1,5 @@
+// {{{ -------------------------------------------------- Events ------------------------
+
 /*
  * This function gets run whenever the page is loaded so for now this is acting as our
  * main control function
@@ -6,14 +8,30 @@ window.onload = function ()
 {
     // Load the canvas and get a 2d context
     var c = document.getElementById("modules");
+
+    // Resize the canvas to fit/fill screen size
+    c.width =  window.innerWidth * 0.9;
+    c.height = window.innerHeight * 0.8;
+
+    // Get a drawing context
     var ctx = c.getContext("2d");
 
+    // Load our test course and plot its modules
     var mmath = new Course("data/mmath.json");
     mmath.sortModules();
     mmath.plotModules(ctx);
 
 
 }
+
+window.onresize = function ()
+{
+    var c = document.getElementById("modules");
+    c.width =  window.innerWidth * 0.9;
+    c.height = window.innerHeight * 0.8;
+}
+
+// }}}
 // {{{ --------------------------------------------- Course Class ----------------------------------------
 
 /*
@@ -59,7 +77,7 @@ function Course(course)
         {
             this.module_grid[index] = [];
         }
-        console.log(this.module_grid);
+        //console.log(this.module_grid);
 
         // Now go through the list of modules and sort them according to year
         for(index = 0 ; index < this.modules.length; index++)
@@ -68,7 +86,7 @@ function Course(course)
             var module = this.modules[index];
             this.module_grid[module.year - 1][this.module_grid[module.year - 1].length] = module;
         }
-        console.log(this.module_grid);
+        //console.log(this.module_grid);
     }
 
     /*
