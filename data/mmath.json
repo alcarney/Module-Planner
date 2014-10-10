@@ -1,0 +1,13 @@
+{
+    "course": {
+                    "name" : "MMath",
+                    "modules" : [
+                                {"url" : "data/algebraI.json",     "core" : true},
+                                {"url" : "data/algebraII.json",    "core": true},
+                                {"url" : "data/analysisI.json",    "core": true},
+                                {"url" : "data/analysisII.josn",   "core": true},
+                                {"url" : "data/analysisIII.json",  "core": true},
+                                {"url" : "data/mechanicsI.json",   "core": false}
+                    ]
+    }
+}
