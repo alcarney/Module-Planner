@@ -8,16 +8,6 @@ window.onload = function ()
     var c = document.getElementById("modules");
     var ctx = c.getContext("2d");
 
-    var module_imgs = loadModules("data/module_list.json", ctx);
-
-    var index;
-    var y = 150;
-
-    for (index = 0 ; index < module_imgs.length ; index++)
-    {
-        ctx.putImageData(module_imgs[index], 10, y*index);
-    }
-
 }
 // {{{ --------------------------------------------- Course Class ----------------------------------------
 
@@ -27,44 +17,49 @@ window.onload = function ()
  * dependencies
  */
 
-// The main constructor class
-function Course(course, context)
+/*
+ * The Course Class Constructor function
+ *
+ * Arguements:
+ *              course: The URL of the JSON file describing the contents of the course
+ */
+function Course(course)
 {
+    /* We need to import the course from the given URL */
+    var course_data = JSON.parse(importData(course));
+
+    // Load the Modules
+    var modules = loadModules(course_data.course.modules);
 
     this.loadModules = loadModules;
 
     /*
      * Function to load the module data base
-     *      module_list: a url to the JSON file containing all the filepaths of the module data
-     *      context: details of the canvas to draw on
+     *
+     * Arguments:
+     *      module_list: An array containing all URLs to the modules in the course
+     *
+     * Returns:
+     *      an array containing all modules in the given list
      */
-    function loadModules(module_list, context)
+    function loadModules(module_list)
     {
-        // First we need to load the module list
-        var mod_list_json = importData(module_list);
-        var mod_list = JSON.parse(mod_list_json);
 
         // A varible to keep track of the array index
         var index;
         var moduleArray = [];
-        var module;
-        var module_data;
         var module_json;
 
-        for (index = 0; index < mod_list.module_list.length ; index++)
+        for (index = 0; index < module_list.length ; index++)
         {
             // Load the module data
-            module_data = importData(mod_list.module_list[index].url);
-            module_json = JSON.parse(module_data);
+            module_json = JSON.parse(importData(module_list[index].url));
 
-            // Parse the JSON
-            module = new Module(module_json);
-
-            // Get the Module representation
-            moduleArray[moduleArray.length] = module.makeModule(context);
+            // Create the module and add it to the array
+            moduleArray[moduleArray.length] = new Module(module_json);
         }
 
-        // Return the list of modules
+        // Return the array of modules
         return moduleArray;
     }
 }
@@ -72,38 +67,63 @@ function Course(course, context)
 
 // {{{ ----------------------------------------------- Module Class ----------------------------------------------
 
-// Constructor for a module, takes the following argument
-//          moduleData: The parsed JSON file object
-function Module(moduleData)
+/*
+ * The Module Class Contructor function
+ *
+ * Arguments:
+ *           moduleData: parsed JSON object containing course independant 
+ *                       module data
+ *           isCore:     A boolean value signifying is this is a core module or not
+ */
+function Module(moduleData, isCore)
 {
     this.name = moduleData.module.name;
     this.year = moduleData.module.year;
+    this.isCore = isCore;
 
-    this.makeModule = makeModule;
+    this.drawModule = drawModule;
 
 
-    // This function draws the module 'box' on screen takes one argument
-    //          canvasContext: the context associated with the canvas we
-    //                         draw on
-    //
-    //  It returns the image data representing the module
-    function makeModule(canvasContext)
+    /*
+     * This function draws the module 'box' on screen 
+     *
+     * Arguments:
+     *
+     *          canvasContext: the context associated with the canvas we
+     *                         draw on
+     *          x:             the x coord of the upper-left corner of the module box
+     *          y:             the y coord of the upper-left corner of the module box
+     *
+     * Returns:
+     *
+     *          Nothing
+     */
+    function drawModule(canvasContext, x, y)
     {
         canvasContext.fillStyle = "#FF0000";
-        canvasContext.fillRect(0, 0, 150, 100);
+        canvasContext.fillRect(x, y, 150, 100);
         canvasContext.fillStyle = "#000000";
-        canvasContext.fillText("Module Name: ".concat(this.name), 4,10);
-        canvasContext.fillText("Year: ".concat(this.year), 4,20);
-        var box = canvasContext.getImageData(0,0,150,100);
-        canvasContext.clearRect(0,0,150,100);
-        return box;
+        canvasContext.fillText("Module Name: ".concat(this.name), (x + 4),(y + 10));
+        canvasContext.fillText("Year: ".concat(this.year), (x + 4),(y + 20));
     }
 }
 // }}}
 
 // {{{  -------------------------------------------- Utility Functions -----------------------------
 
-// Function to load the JSON file from the database
+/*
+ * Function that retrieves a text file at the given URL
+ *
+ * TODO: This function currently doesn't have any form of erorr
+ *       handling for example if there is a 404 error etc.
+ *
+ * Arguments:
+ *
+ *          url: The URL of the file to retrieve
+ *
+ * Returns:
+ *          The text contained in the file
+ */
 function importData(url)
 {
     var data_file = new XMLHttpRequest();
