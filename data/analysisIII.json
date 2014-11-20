@@ -1,8 +1,0 @@
-{
-    "module" : {
-                "name": "Analysis III",
-                "year": 2,
-                "requirements": ["Analysis I", "Analysis II"],
-                "credits": 10
-    }
-}

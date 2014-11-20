@@ -1,8 +1,0 @@
-{
-    "module" : {
-                "name": "Calculus of Several Variables",
-                "year": 2,
-                "requirements": ["None"],
-                "credits": 10
-    }
-}
