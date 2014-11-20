@@ -1,3 +1,6 @@
+"""
+Script that calls `convert_to_md` on every file in this directory (relative paths)
+"""
 from glob import glob
 from subprocess import call
 
