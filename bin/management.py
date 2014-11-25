@@ -21,10 +21,11 @@ Current features include:
 """
 
 # Import the tools we need
-import ConfigParser
-import json
-import yaml
+import ConfigParser                     # For parsing settings.conf
+import glob                             # For looping through files in a directory
+import json                             # For exporting json data
 
+# {{{ Planner Settings
 class PlannerSettings():
 
     """
@@ -80,6 +81,85 @@ class PlannerSettings():
     def getModulePaths(self):
         return self.settings['module_paths']
 
+# }}}
+
+# {{{ Data Manager
+class DataManager():
+
+    """
+    Init function for the DataManager class, the only argument is a
+    PlannerSettings object so this can discover the appropriate file
+    paths etc.
+    """
+    def __init__(self, settings):
+        self.settings = settings
+
+    """
+    Function that will parse the yaml data since the yaml library
+    works in a bizarre way and it's not too hard to do it manually
+    """
+    def parseYaml(self, yaml):
+
+        # Create an empty dictionary to store the values in
+        parsed_data = dict()
+
+        # Each yaml entry is on a single line so split by new lines
+        for line in yaml.split("\n"):
+
+            # The yaml string seems to come with extra guff so only do the following on lines that contain
+            # the ':' seperator
+            if ':' in line:
+
+                # Split the line according to the seperator, since URLs also contain ':' we will
+                # split only by the first occurance
+                linesplit = line.split(':', 1)
+
+                # The first segment will be the dictionary key
+                key = linesplit[0].rstrip()         # Remove trailing whitespace
+
+                # The value is a bit more complicated so, first let's strip the leading spaces
+                value = linesplit[1].lstrip()       # Remove leading whitespace
+
+                # There are cases where we need to build a list
+                if '[' in value:
+                    value = eval(value)
+
+                # Add the values to the dictionary
+                parsed_data[key] = value
+
+        # Return the dictionary
+        return parsed_data
+
+
+    """
+    This function loops through all the .md files in the directories
+    specified by PlannerSettings.getModulePaths(), parses the yaml and
+    makes sure it conforms to the specification
+    """
+    def validateModuleData(self):
+
+        # First things first loop through the module paths
+        for path in self.settings.getModulePaths():
+
+            # Now for each path loop through all the markdown files
+            for md_file in glob.glob(path + "*.md"):
+
+                # Open the markdown file
+                with open(md_file, 'r') as md:
+
+                    # Since the yaml data that we are interested in is inbetween two '---' tags
+                    # let's split the string by that as we read the file
+                    try:
+                        yaml_data = md.read().split('---')[1]
+                        print self.parseYaml(yaml_data)
+                    #print yaml_data
+                    except:
+                        print "[validateModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
+
+# }}}
+
 config = PlannerSettings('settings.conf')
+data_manager = DataManager(config)
 print config.getModulePaths()
+data_manager.validateModuleData()
 
