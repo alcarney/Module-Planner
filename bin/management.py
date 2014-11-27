@@ -24,6 +24,7 @@ Current features include:
 import ConfigParser                     # For parsing settings.conf
 import glob                             # For looping through files in a directory
 import json                             # For exporting json data
+import yaml                             # For parsing yaml
 
 # {{{ Planner Settings
 class PlannerSettings():
@@ -106,42 +107,6 @@ class DataManager():
     """
     def __init__(self, settings):
         self.settings = settings
-
-    """
-    Function that will parse the yaml data since the yaml library
-    works in a bizarre way and it's not too hard to do it manually
-    """
-    def parseYaml(self, yaml):
-
-        # Create an empty dictionary to store the values in
-        parsed_data = dict()
-
-        # Each yaml entry is on a single line so split by new lines
-        for line in yaml.split("\n"):
-
-            # The yaml string seems to come with extra guff so only do the following on lines that contain
-            # the ':' seperator
-            if ':' in line:
-
-                # Split the line according to the seperator, since URLs also contain ':' we will
-                # split only by the first occurance
-                linesplit = line.split(':', 1)
-
-                # The first segment will be the dictionary key
-                key = linesplit[0].rstrip()         # Remove trailing whitespace
-
-                # The value is a bit more complicated so, first let's strip the leading spaces
-                value = linesplit[1].lstrip()       # Remove leading whitespace
-
-                # There are cases where we need to build a list
-                if '[' in value:
-                    value = eval(value)
-
-                # Add the values to the dictionary
-                parsed_data[key] = value
-
-        # Return the dictionary
-        return parsed_data
 
     """
     Function to load the Course Data from file, as specified by the settings.conf file
