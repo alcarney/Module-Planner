@@ -55,8 +55,17 @@ class PlannerSettings():
             # Get the root of the site - this comes with quotes so let's get rid of those while we're at it
             root = settings.get("core", "site_root").replace('\"', '')
 
-            # Now get the folders containing the module data - same with this one
-            modules = settings.get("data", "modules").replace('\"', '')
+            # Get the folder(s) containing the course data - same here also
+            courses = settings.get("data", "course_folder").replace('\"', '')
+
+            
+
+            # They should be in a comma seperated list, so split by commas and loop through
+            for c in courses.split(','):
+
+
+            # Now get the folder(s) containing the module data - same with this one
+            modules = settings.get("data", "module_folder").replace('\"', '')
 
             # We will store the filepaths for the data in a list
             self.settings['module_paths'] = list()
@@ -74,9 +83,13 @@ class PlannerSettings():
     def useDefaults(self):
         pass
 
+    """
+    Function to get the file path(s) where course data is located
+    """
+    return self.settings['course_paths']
 
     """
-    Function to get the file paths where module data is located
+    Function to get the file path(s) where module data is located
     """
     def getModulePaths(self):
         return self.settings['module_paths']
@@ -130,6 +143,12 @@ class DataManager():
         # Return the dictionary
         return parsed_data
 
+    """
+    Function to load the Course Data from file, as specified by the settings.conf file
+    """
+    def loadCourseData(self):
+
+
 
     """
     This function loops through all the .md files in the directories
@@ -152,7 +171,6 @@ class DataManager():
                     try:
                         yaml_data = md.read().split('---')[1]
                         print self.parseYaml(yaml_data)
-                    #print yaml_data
                     except:
                         print "[validateModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
 
