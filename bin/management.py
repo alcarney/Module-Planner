@@ -98,6 +98,7 @@ class PlannerSettings():
         return self.settings['module_paths']
 
 # }}}
+# {{{ DataIO
 class DataIO():
 
     """
@@ -153,7 +154,7 @@ class DataIO():
                         print "[loadModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
 
         return modules
-
+# }}}
 
 # {{{ Data Manager
 class DataManager():
@@ -202,13 +203,18 @@ class DataManager():
 
 
     """
-    Function to validate module data
+    Function to convert data and write it to a JSON file
     """
-    def validateModuleData(self):
+    def convertData(self):
 
         # Get the modules we have loaded from the site
         modules = self.getModules()
         print modules[0]
+
+        json_data = {'courses': [c for c in self.getCourses()], 'modules': list()}
+
+        # Create a file to write to
+        json_f = open('../data/planner_data.json', 'w')
 
         # Loop through each module
         for m in modules:
@@ -218,16 +224,14 @@ class DataManager():
                 print "[validateModuleData]: ERROR: Module %s does not belong to any defined course and will be ignored" % m['code']
                 continue
 
-            # 
+            # Add it to the data to be written
+            json_data['modules'].append(m)
 
+        # Write the JSON
+        json.dump(json_data, json_f, indent=1)
 
 # }}}
 
 data_manager = DataManager('settings.conf')
-#print config.getModulePaths()
-#print config.getCoursePaths()
 print data_manager.getCourses()
-data_manager.validateModuleData()
-
-#data_manager.validateModuleData()
-
+data_manager.convertData()
