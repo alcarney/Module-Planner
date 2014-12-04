@@ -1,0 +1,160 @@
+{
+ "courses": [
+  {
+   "code": "G100", 
+   "layout": "post", 
+   "title": "Mathematics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/g100.html", 
+   "modules": [
+    "MA0111", 
+    "MA0122", 
+    "MA0123", 
+    "MA0125", 
+    "MA0126", 
+    "MA1000", 
+    "MA1001", 
+    "MA1002", 
+    "MA1003", 
+    "MA1004", 
+    "MA1300", 
+    "MA1500", 
+    "MA1501"
+   ], 
+   "categories": "course singlehons"
+  }
+ ], 
+ "modules": [
+  {
+   "code": "MA1001", 
+   "layout": "post", 
+   "title": "Elementary Differential Equations", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1001.html", 
+   "prequesites": [
+    "Algebra I", 
+    "Calculus", 
+    "Algebra II"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1000", 
+   "layout": "post", 
+   "title": "Calculus", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1000.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1501", 
+   "layout": "post", 
+   "title": "Statistical Inference", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1501.html", 
+   "prequesites": [
+    "Introduction to Probability Theory"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0111", 
+   "layout": "post", 
+   "title": "Elementary Number Theory I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0111.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1003", 
+   "layout": "post", 
+   "title": "Computing for Mathematics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1003.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1002", 
+   "layout": "post", 
+   "title": "Introduction to Dynamical Systems and Chaos", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1002.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1300", 
+   "layout": "post", 
+   "title": "Mechanics I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1300.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0122", 
+   "layout": "post", 
+   "title": "Algebra I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0122.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1500", 
+   "layout": "post", 
+   "title": "Introduction to Probability Theory", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1500.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0123", 
+   "layout": "post", 
+   "title": "Analysis I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0123.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0126", 
+   "layout": "post", 
+   "title": "Analysis II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0126.html", 
+   "prequesites": [
+    "Analysis I"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0125", 
+   "layout": "post", 
+   "title": "Algebra II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0125.html", 
+   "prequesites": [
+    "Algebra I"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1004", 
+   "layout": "post", 
+   "title": "Geometry", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1004.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }
+ ]
+}
