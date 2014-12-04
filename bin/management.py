@@ -57,13 +57,14 @@ class PlannerSettings():
             root = settings.get("core", "site_root").replace('\"', '')
 
             # Get the folder(s) containing the course data - same here also
-            courses = settings.get("data", "course_folder").replace('\"', '')
+            courses = settings.get("data", "courses_folder").replace('\"', '')
 
-            
+            # We will store all the courses in a list
+            self.settings['course_paths'] = list()
 
             # They should be in a comma seperated list, so split by commas and loop through
             for c in courses.split(','):
-
+                self.settings['course_paths'].append(root + c + '/')
 
             # Now get the folder(s) containing the module data - same with this one
             modules = settings.get("data", "module_folder").replace('\"', '')
@@ -87,7 +88,8 @@ class PlannerSettings():
     """
     Function to get the file path(s) where course data is located
     """
-    return self.settings['course_paths']
+    def getCoursePaths(self):
+        return self.settings['course_paths']
 
     """
     Function to get the file path(s) where module data is located
@@ -107,20 +109,41 @@ class DataManager():
     """
     def __init__(self, settings):
         self.settings = settings
+        self.loadCourseData()
+        self.loadModuleData()
 
     """
     Function to load the Course Data from file, as specified by the settings.conf file
     """
     def loadCourseData(self):
 
+        # We will store each course dict in a list
+        self.courses = list()
+
+        # Loop for each path that conatins a course definition
+        for path in self.settings.getCoursePaths():
+
+            # Now loop though each .md file
+            for md_file in glob.glob(path + "*.md"):
+
+                # Open the file and load the data
+                with open(md_file, "r") as md:
+
+                    # Extract the yaml data between the '---' tags
+                    try:
+                        yaml_data = md.read().split('---')[1]
+                        self.courses.append(yaml.load(yaml_data))
+                    except:
+                        print "[loadCourseData]: ERROR: %s does not match expected format and will be ignored" % md_file
 
 
     """
-    This function loops through all the .md files in the directories
-    specified by PlannerSettings.getModulePaths(), parses the yaml and
-    makes sure it conforms to the specification
+    Loads the module data
     """
-    def validateModuleData(self):
+    def loadModuleData(self):
+
+        # Store each module dictionary in a list
+        self.modules = list()
 
         # First things first loop through the module paths
         for path in self.settings.getModulePaths():
@@ -135,14 +158,61 @@ class DataManager():
                     # let's split the string by that as we read the file
                     try:
                         yaml_data = md.read().split('---')[1]
-                        print self.parseYaml(yaml_data)
+                        self.modules.append(yaml.load(yaml_data))
                     except:
-                        print "[validateModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
+                        print "[loadModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
+
+    def getCourses(self):
+        return self.courses
+
+    def getModules(self):
+        return self.modules
+
+
+    """
+    Function that will check to see if a module is in a course
+    """
+    def inCourse(self, module):
+
+        # Loop through all the courses
+        for c in self.getCourses():
+
+            # Check to see if it is part of a course
+            if module['code'] in c['modules']:
+                return True
+
+        # Else it's not in a course and return false
+        return False
+
+
+    """
+    Function to validate module data
+    """
+    def validateModuleData(self):
+
+        # Get the modules we have loaded from the site
+        modules = self.getModules()
+        print modules[0]
+
+        # Loop through each module
+        for m in modules:
+
+            # Check to see if the given module actually belongs to a course, if not skip it
+            if not self.inCourse(m):
+                print "[validateModuleData]: ERROR: Module %s does not belong to any defined course and will be ignored" % m['code']
+                continue
+
+            # 
+
 
 # }}}
 
 config = PlannerSettings('settings.conf')
 data_manager = DataManager(config)
-print config.getModulePaths()
+#print config.getModulePaths()
+#print config.getCoursePaths()
+print data_manager.getCourses()
 data_manager.validateModuleData()
+
+#data_manager.validateModuleData()
 
