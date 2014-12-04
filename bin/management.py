@@ -98,30 +98,18 @@ class PlannerSettings():
         return self.settings['module_paths']
 
 # }}}
-
-# {{{ Data Manager
-class DataManager():
-
-    """
-    Init function for the DataManager class, the only argument is a
-    PlannerSettings object so this can discover the appropriate file
-    paths etc.
-    """
-    def __init__(self, settings):
-        self.settings = settings
-        self.loadCourseData()
-        self.loadModuleData()
+class DataIO():
 
     """
     Function to load the Course Data from file, as specified by the settings.conf file
     """
-    def loadCourseData(self):
+    def loadCourseData(self, paths):
 
         # We will store each course dict in a list
-        self.courses = list()
+        courses = list()
 
         # Loop for each path that conatins a course definition
-        for path in self.settings.getCoursePaths():
+        for path in paths:
 
             # Now loop though each .md file
             for md_file in glob.glob(path + "*.md"):
@@ -132,21 +120,23 @@ class DataManager():
                     # Extract the yaml data between the '---' tags
                     try:
                         yaml_data = md.read().split('---')[1]
-                        self.courses.append(yaml.load(yaml_data))
+                        courses.append(yaml.load(yaml_data))
                     except:
                         print "[loadCourseData]: ERROR: %s does not match expected format and will be ignored" % md_file
+
+        return courses
 
 
     """
     Loads the module data
     """
-    def loadModuleData(self):
+    def loadModuleData(self, paths):
 
         # Store each module dictionary in a list
-        self.modules = list()
+        modules = list()
 
         # First things first loop through the module paths
-        for path in self.settings.getModulePaths():
+        for path in paths:
 
             # Now for each path loop through all the markdown files
             for md_file in glob.glob(path + "*.md"):
@@ -158,9 +148,35 @@ class DataManager():
                     # let's split the string by that as we read the file
                     try:
                         yaml_data = md.read().split('---')[1]
-                        self.modules.append(yaml.load(yaml_data))
+                        modules.append(yaml.load(yaml_data))
                     except:
                         print "[loadModuleData]: ERROR: %s does not match expected format and will be ignored" % md_file
+
+        return modules
+
+
+# {{{ Data Manager
+class DataManager():
+
+    """
+    Init function for the DataManager class, the only argument is a
+    PlannerSettings object so this can discover the appropriate file
+    paths etc.
+    """
+    def __init__(self, settings_file):
+
+        # Load the settings
+        self.settings = PlannerSettings(settings_file)
+
+        # Create a data reader/writer
+        self.io = DataIO()
+
+        # Load Course Data
+        self.courses = self.io.loadCourseData(self.settings.getCoursePaths())
+
+        # Load Module Data
+        self.modules = self.io.loadModuleData(self.settings.getModulePaths())
+
 
     def getCourses(self):
         return self.courses
@@ -207,8 +223,7 @@ class DataManager():
 
 # }}}
 
-config = PlannerSettings('settings.conf')
-data_manager = DataManager(config)
+data_manager = DataManager('settings.conf')
 #print config.getModulePaths()
 #print config.getCoursePaths()
 print data_manager.getCourses()
