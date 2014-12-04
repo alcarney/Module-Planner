@@ -221,7 +221,7 @@ class DataManager():
 
             # Check to see if the given module actually belongs to a course, if not skip it
             if not self.inCourse(m):
-                print "[validateModuleData]: ERROR: Module %s does not belong to any defined course and will be ignored" % m['code']
+                print "[validateModuleData]: WARN: Module %s does not belong to any defined course and will be ignored" % m['code']
                 continue
 
             # Add it to the data to be written
