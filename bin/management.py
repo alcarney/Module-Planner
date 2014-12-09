@@ -55,7 +55,6 @@ class PlannerSettings():
                 # Check that defaults were defined
                 if self.settings is None:
                     print "[PlannerSettings]: ERROR: Default settings were not defined, unable to continue"
-                    exit(1)
 
                 # If so then return
                 return
@@ -239,6 +238,6 @@ class DataManager():
 
 # }}}
 
-data_manager = DataManager('settings.conf')
-print data_manager.getCourses()
-data_manager.convertData()
+#data_manager = DataManager('settings.conf')
+#print data_manager.getCourses()
+#data_manager.convertData()
