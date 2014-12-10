@@ -1,18 +1,44 @@
 ---
-layout : default
+layout : page
 title  : "Module list"
 ---
 
 <div class="home">
-    <h1>Module list</h1>
 
+    <h2>First Year</h2>
     <ul>
     {% for page in site.pages %}
-        {% if page.categories contains 'module' %}
-        <li><a href={{ page.url | prepend: site.baseurl }}>{{ page.title }}</a></li>
+        {% if page.categories contains 'module' and page.categories contains 'firstyear' %}
+            <li><a href={{ page.url | prepend: site.baseurl }}>{{ page.code }} - {{ page.title }}</a></li>
         {% endif %}
     {% endfor %}
     </ul>
 
+    <h2>Second Year</h2>
+    <ul>
+    {% for page in site.pages %}
+        {% if page.categories contains 'module' and page.categories contains 'secondyear' %}
+            <li><a href={{ page.url | prepend: site.baseurl }}>{{ page.code }} - {{ page.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h2>Third Year</h2>
+    <ul>
+    {% for page in site.pages %}
+        {% if page.categories contains 'module' and page.categories contains 'thirdyear' %}
+            <li><a href={{ page.url | prepend: site.baseurl }}>{{ page.code }} - {{ page.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h2>Foruth Year</h2>
+    <ul>
+    {% for page in site.pages %}
+        {% if page.categories contains 'module' and page.categories contains 'fourthyear' %}
+            <li><a href={{ page.url | prepend: site.baseurl }}>{{ page.code }} - {{ page.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 
 </div>
