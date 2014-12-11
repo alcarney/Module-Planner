@@ -55,6 +55,7 @@ class PlannerSettings():
                 # Check that defaults were defined
                 if self.settings is None:
                     print "[PlannerSettings]: ERROR: Default settings were not defined, unable to continue"
+                    raise Exception('NoSettings')
 
                 # If so then return
                 return
