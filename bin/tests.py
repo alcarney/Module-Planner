@@ -4,17 +4,14 @@ import management
 import unittest
 
 class TestDataManager(unittest.TestCase):
-    
+
     def test_using_defaults(self):
-        
-        #Creates a Planner setting object with an invalid file
-        self.test_object = management.PlannerSettings('')
 
         #The Planner object should still be created but switch to defaults, if there are none no settings will be set
-        self.assertRaises(Exception,'NoSettings')
+        self.assertRaises(management.NoSettings, management.PlannerSettings, '')
 
     def test_reading_course_paths(self):
-       
+
         #Creates an planner settings object using settings.conf
         self.test_object = management.PlannerSettings('settings.conf')
 

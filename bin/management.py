@@ -27,6 +27,11 @@ import json                             # For exporting json data
 import yaml                             # For parsing yaml
 from sys import exit                    # Get out of jail free card ;)
 
+# {{{ NoSettings Exception
+class NoSettings(Exception):
+    pass
+# }}}
+
 # {{{ Planner Settings
 class PlannerSettings():
 
@@ -55,7 +60,7 @@ class PlannerSettings():
                 # Check that defaults were defined
                 if self.settings is None:
                     print "[PlannerSettings]: ERROR: Default settings were not defined, unable to continue"
-                    raise Exception('NoSettings')
+                    raise NoSettings("PlannerSettings is empty")
 
                 # If so then return
                 return
