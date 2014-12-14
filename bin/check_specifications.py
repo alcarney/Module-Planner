@@ -95,4 +95,5 @@ def check_module_obeys_specifications(module_file, specifications_file):
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
-    print arguments
+
+    print check_module_obeys_specifications(arguments['<modulefile>'], arguments['<specificationfile>'])
