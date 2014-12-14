@@ -43,12 +43,16 @@ def check_module_obeys_specifications(module_file, specifications_file):
 
         >>> check_module_obeys_specifications('module_data_file_test.md', 'data_specification.yml')
         True
+        >>> check_module_obeys_specifications('wrong_layout_module_data_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'layout' in 'wrong_layout_module_data_file_test.md' does not match specification
     """
     module_specs = read_module(module_file)
     specifications = read_specifications(specifications_file)
     for variable in specifications:
         if not bool(search(specifications[variable], module_specs[variable])):
-            raise ValueError("Variable '%s' does not match specification" % variable)
+            raise ValueError("Variable '%s' in '%s' does not match specification" % (variable, module_file))
     return True
 
 
