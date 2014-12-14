@@ -15,7 +15,7 @@ def read_specifications(specification_file):
     Function to read in specification file
 
         >>> read_specifications('data_specification.yml')
-        {'code': 'MA[0-9]{4}', 'layout': 'module', 'prequesites': "\\\\[('MA[0-9]{4}',+(,'MA[0-9]{4}')*)|'None'\\\\]", 'categories': 'firstyear|secondyear|thirdyear'}
+        {'code': 'MA[0-9]{4}', 'layout': 'module', 'prequesites': "(\\\\['MA[0-9]{4}'+(, 'MA[0-9]{4}')*\\\\])|(\\\\['None'\\\\])", 'categories': 'firstyear|secondyear|thirdyear'}
 
     """
     specification_file = open(specification_file, 'r')
