@@ -43,10 +43,35 @@ def check_module_obeys_specifications(module_file, specifications_file):
 
         >>> check_module_obeys_specifications('module_data_file_test.md', 'data_specification.yml')
         True
+
+    Check that doesn't work if incorrect layout is in file (corresponding file has layout 'nonsense'):
+
         >>> check_module_obeys_specifications('wrong_layout_module_data_file_test.md', 'data_specification.yml')
         Traceback (most recent call last):
            ...
         ValueError: Variable 'layout' in 'wrong_layout_module_data_file_test.md' does not match specification
+
+    Check that doesn't work if incorrect code is in file (corresponding file has code 'CS011'):
+
+        >>> check_module_obeys_specifications('wrong_code_module_data_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'code' in 'wrong_code_module_data_file_test.md' does not match specification
+
+
+
+        >>> check_module_obeys_specifications('wrong_code_module_data_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'code' in 'wrong_code_module_data_file_test.md' does not match specification
+
+    Check that doesn't work if incorrect category is in file (corresponding file has category 'MSc'):
+
+        >>> check_module_obeys_specifications('wrong_category_module_data_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'categories' in 'wrong_category_module_data_file_test.md' does not match specification
+
     """
     module_specs = read_module(module_file)
     specifications = read_specifications(specifications_file)
