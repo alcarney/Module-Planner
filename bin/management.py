@@ -25,6 +25,12 @@ import ConfigParser                     # For parsing settings.conf
 import glob                             # For looping through files in a directory
 import json                             # For exporting json data
 import yaml                             # For parsing yaml
+from sys import exit                    # Get out of jail free card ;)
+
+# {{{ NoSettings Exception
+class NoSettings(Exception):
+    pass
+# }}}
 
 # {{{ Planner Settings
 class PlannerSettings():
@@ -48,9 +54,15 @@ class PlannerSettings():
             if files_parsed == []:
 
                 # If we can't load the file try and use defaults instead
-                print "[PlannerSettings]: WARN: Unable to load settings.conf, trying to continue with defaults"
+                print "[PlannerSettings]: WARN: Unable to load %s, trying to continue with defaults" % config_file
                 self.useDefaults()
 
+                # Check that defaults were defined
+                if self.settings is None:
+                    print "[PlannerSettings]: ERROR: Default settings were not defined, unable to continue"
+                    raise NoSettings("PlannerSettings is empty")
+
+                # If so then return
                 return
 
             # Get the root of the site - this comes with quotes so let's get rid of those while we're at it
@@ -83,7 +95,7 @@ class PlannerSettings():
     to provide a set of sane defaults
     """
     def useDefaults(self):
-        pass
+        self.settings = None
 
     """
     Function to get the file path(s) where course data is located
@@ -232,6 +244,6 @@ class DataManager():
 
 # }}}
 
-data_manager = DataManager('settings.conf')
-print data_manager.getCourses()
-data_manager.convertData()
+#data_manager = DataManager('settings.conf')
+#print data_manager.getCourses()
+#data_manager.convertData()
