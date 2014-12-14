@@ -77,12 +77,19 @@ def check_module_obeys_specifications(module_file, specifications_file):
         >>> check_module_obeys_specifications('./files_for_tests/correct_prequesites_module_data_file_test.md', 'data_specification.yml')
         True
 
-    Check that works if incorrect prerequesites is in file (corresponding file has one prequesites as 'Ice Cream'
+    Check that works if incorrect prerequesites is in file (corresponding file has one prequesites as 'Ice Cream'):
 
         >>> check_module_obeys_specifications('./files_for_tests/incorrect_prequesites_module_data_file_test.md', 'data_specification.yml')
         Traceback (most recent call last):
            ...
         ValueError: Variable 'prequesites' in './files_for_tests/incorrect_prequesites_module_data_file_test.md' does not match specification
+
+    Check that works if incorrect prerequesites is in file (corresponding file has one prequesites as 'Ice Cream' but in different order to previous file):
+
+        >>> check_module_obeys_specifications('./files_for_tests/incorrect_prequesites_module_data_other_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'prequesites' in './files_for_tests/incorrect_prequesites_module_data_other_file_test.md' does not match specification
 
     """
     module_specs = read_module(module_file)
