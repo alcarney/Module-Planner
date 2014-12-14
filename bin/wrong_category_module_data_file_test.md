@@ -3,7 +3,7 @@ layout      : module
 code        : MA0111
 categories  : module Msc
 title       : Elementary Number Theory I
-prequesites : ['None']
+prequesites : [None]
 url         : http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0111.html
 ---
 

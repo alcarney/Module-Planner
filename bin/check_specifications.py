@@ -15,7 +15,7 @@ def read_specifications(specification_file):
     Function to read in specification file
 
         >>> read_specifications('data_specification.yml')
-        {'code': 'MA[0-9]{4}', 'layout': 'module', 'categories': 'firstyear|secondyear|thirdyear'}
+        {'code': 'MA[0-9]{4}', 'layout': 'module', 'prequesites': "\\\\[('MA[0-9]{4}',+(,'MA[0-9]{4}')*)|'None'\\\\]", 'categories': 'firstyear|secondyear|thirdyear'}
 
     """
     specification_file = open(specification_file, 'r')
@@ -72,11 +72,23 @@ def check_module_obeys_specifications(module_file, specifications_file):
            ...
         ValueError: Variable 'categories' in 'wrong_category_module_data_file_test.md' does not match specification
 
+    Check that works if correct prerequesites is in file
+
+        >>> check_module_obeys_specifications('correct_prequesites_module_data_file_test.md', 'data_specification.yml')
+        True
+
+    Check that works if incorrect prerequesites is in file (corresponding file has one prequesites as 'Ice Cream'
+
+        >>> check_module_obeys_specifications('incorrect_prequesites_module_data_file_test.md', 'data_specification.yml')
+        Traceback (most recent call last):
+           ...
+        ValueError: Variable 'prequesites' in 'incorrect_prequesites_module_data_file_test.md' does not match specification
+
     """
     module_specs = read_module(module_file)
     specifications = read_specifications(specifications_file)
     for variable in specifications:
-        if not bool(search(specifications[variable], module_specs[variable])):
+        if not bool(search(specifications[variable], str(module_specs[variable]))):
             raise ValueError("Variable '%s' in '%s' does not match specification" % (variable, module_file))
     return True
 
