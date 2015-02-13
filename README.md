@@ -1,6 +1,8 @@
 Module-Planner
 ==============
 
+[![Documentation Status](https://readthedocs.org/projects/module-planner/badge/?version=latest)](https://readthedocs.org/projects/module-planner/?badge=latest)
+
 A website to help students choose their modules
 
 Installation
