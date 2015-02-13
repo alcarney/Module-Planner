@@ -3,8 +3,8 @@
   {
    "code": "G100", 
    "layout": "post", 
-   "title": "Mathematics", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/g100.html", 
+   "title": "Mathematics BSc", 
+   "url": "http://courses.cardiff.ac.uk/undergraduate/course/detail/G100.html", 
    "modules": [
     "MA0111", 
     "MA0122", 
@@ -18,29 +18,278 @@
     "MA1004", 
     "MA1300", 
     "MA1500", 
-    "MA1501"
+    "MA1501", 
+    "MA0212", 
+    "MA0216", 
+    "MA0221", 
+    "MA0232", 
+    "MA0235", 
+    "MA0261", 
+    "MA0263", 
+    "MA0276", 
+    "MA0291", 
+    "MA2001", 
+    "MA2002", 
+    "MA2003", 
+    "MA2004", 
+    "MA2005", 
+    "MA2300", 
+    "MA2301", 
+    "MA2500", 
+    "MA2700", 
+    "MA0322", 
+    "MA0332", 
+    "MA0355", 
+    "MA0358", 
+    "MA0367", 
+    "MA0381", 
+    "MA0391", 
+    "MA0392", 
+    "MA3000", 
+    "MA3003", 
+    "MA3004", 
+    "MA3005", 
+    "MA3006", 
+    "MA3301", 
+    "MA3303", 
+    "MA3304", 
+    "MA3500", 
+    "MA3501", 
+    "MA3502", 
+    "MA3503", 
+    "MA3600", 
+    "MA3700", 
+    "MA3900"
+   ], 
+   "categories": "course singlehons"
+  }, 
+  {
+   "code": "G991", 
+   "layout": "post", 
+   "title": "Mathematics, Operational Research and Statistics (BSc)", 
+   "url": "http://courses.cardiff.ac.uk/undergraduate/course/detail/G991.html", 
+   "modules": [
+    "MA0111", 
+    "MA0122", 
+    "MA0123", 
+    "MA0125", 
+    "MA0126", 
+    "MA1000", 
+    "MA1001", 
+    "MA1002", 
+    "MA1003", 
+    "MA1004", 
+    "MA1300", 
+    "MA1500", 
+    "MA1501", 
+    "MA0212", 
+    "MA0216", 
+    "MA0221", 
+    "MA0232", 
+    "MA0261", 
+    "MA0263", 
+    "MA0276", 
+    "MA0291", 
+    "MA2001", 
+    "MA2002", 
+    "MA2003", 
+    "MA2004", 
+    "MA2005", 
+    "MA2500", 
+    "MA2700", 
+    "MA0322", 
+    "MA0355", 
+    "MA0358", 
+    "MA0367", 
+    "MA0381", 
+    "MA0391", 
+    "MA0392", 
+    "MA3000", 
+    "MA3003", 
+    "MA3004", 
+    "MA3006", 
+    "MA3301", 
+    "MA3304", 
+    "MA3500", 
+    "MA3501", 
+    "MA3502", 
+    "MA3503", 
+    "MA3600", 
+    "MA3700", 
+    "MA3900"
+   ], 
+   "categories": "course singlehons"
+  }, 
+  {
+   "code": "G120", 
+   "layout": "post", 
+   "title": "Mathematics and its Applications (BSc)", 
+   "url": "http://courses.cardiff.ac.uk/undergraduate/course/detail/G120.html", 
+   "modules": [
+    "MA0111", 
+    "MA0122", 
+    "MA0123", 
+    "MA0125", 
+    "MA0126", 
+    "MA1000", 
+    "MA1001", 
+    "MA1002", 
+    "MA1003", 
+    "MA1004", 
+    "MA1300", 
+    "MA1500", 
+    "MA1501", 
+    "MA0212", 
+    "MA0216", 
+    "MA0221", 
+    "MA0232", 
+    "MA0235", 
+    "MA0261", 
+    "MA0263", 
+    "MA0276", 
+    "MA0291", 
+    "MA2001", 
+    "MA2002", 
+    "MA2003", 
+    "MA2004", 
+    "MA2005", 
+    "MA2300", 
+    "MA2301", 
+    "MA2500", 
+    "MA2700", 
+    "MA0322", 
+    "MA0332", 
+    "MA0355", 
+    "MA0358", 
+    "MA0367", 
+    "MA0381", 
+    "MA0391", 
+    "MA0392", 
+    "MA3000", 
+    "MA3003", 
+    "MA3004", 
+    "MA3005", 
+    "MA3006", 
+    "MA3301", 
+    "MA3303", 
+    "MA3304", 
+    "MA3500", 
+    "MA3501", 
+    "MA3502", 
+    "MA3503", 
+    "MA3600", 
+    "MA3700", 
+    "MA3900"
+   ], 
+   "categories": "course singlehons"
+  }, 
+  {
+   "code": "G101", 
+   "layout": "post", 
+   "title": "Mathematics (MMath)", 
+   "url": "http://courses.cardiff.ac.uk/undergraduate/course/detail/G101.html", 
+   "modules": [
+    "MA0111", 
+    "MA0122", 
+    "MA0123", 
+    "MA0125", 
+    "MA0126", 
+    "MA1000", 
+    "MA1001", 
+    "MA1002", 
+    "MA1003", 
+    "MA1004", 
+    "MA1300", 
+    "MA1500", 
+    "MA1501", 
+    "MA0212", 
+    "MA0216", 
+    "MA0221", 
+    "MA0232", 
+    "MA0235", 
+    "MA0261", 
+    "MA2001", 
+    "MA2002", 
+    "MA2003", 
+    "MA2004", 
+    "MA2005", 
+    "MA2300", 
+    "MA2301", 
+    "MA2500", 
+    "MA2700", 
+    "MA0322", 
+    "MA0332", 
+    "MA0358", 
+    "MA0367", 
+    "MA3000", 
+    "MA3003", 
+    "MA3004", 
+    "MA3005", 
+    "MA3006", 
+    "MA3301", 
+    "MA3303", 
+    "MA3304", 
+    "MA3500", 
+    "MA3501", 
+    "MA4000", 
+    "MA4001", 
+    "MA4007", 
+    "MA4008", 
+    "MA4009", 
+    "MA4011", 
+    "MA4012", 
+    "MA4900", 
+    "MA4901"
    ], 
    "categories": "course singlehons"
   }
  ], 
  "modules": [
   {
-   "code": "MA1001", 
+   "code": "MA1500", 
    "layout": "post", 
-   "title": "Elementary Differential Equations", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1001.html", 
+   "title": "Introduction to Probability Theory", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1500.html", 
    "prequesites": [
-    "Algebra I", 
-    "Calculus", 
-    "Algebra II"
+    "None"
    ], 
    "categories": "module firstyear"
   }, 
   {
-   "code": "MA1000", 
+   "code": "MA0126", 
    "layout": "post", 
-   "title": "Calculus", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1000.html", 
+   "title": "Analysis II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0126.html", 
+   "prequesites": [
+    "MA0123"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1004", 
+   "layout": "post", 
+   "title": "Geometry", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1004.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0125", 
+   "layout": "post", 
+   "title": "Algebra II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0125.html", 
+   "prequesites": [
+    "MA0122"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA1002", 
+   "layout": "post", 
+   "title": "Introduction to Dynamical Systems and Chaos", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1002.html", 
    "prequesites": [
     "None"
    ], 
@@ -52,17 +301,19 @@
    "title": "Statistical Inference", 
    "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1501.html", 
    "prequesites": [
-    "Introduction to Probability Theory"
+    "MA1500"
    ], 
    "categories": "module firstyear"
   }, 
   {
-   "code": "MA0111", 
+   "code": "MA1001", 
    "layout": "post", 
-   "title": "Elementary Number Theory I", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0111.html", 
+   "title": "Elementary Differential Equations", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1001.html", 
    "prequesites": [
-    "None"
+    "MA0122", 
+    "MA1000", 
+    "MA0125"
    ], 
    "categories": "module firstyear"
   }, 
@@ -77,10 +328,10 @@
    "categories": "module firstyear"
   }, 
   {
-   "code": "MA1002", 
+   "code": "MA1000", 
    "layout": "post", 
-   "title": "Introduction to Dynamical Systems and Chaos", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1002.html", 
+   "title": "Calculus", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1000.html", 
    "prequesites": [
     "None"
    ], 
@@ -97,26 +348,6 @@
    "categories": "module firstyear"
   }, 
   {
-   "code": "MA0122", 
-   "layout": "post", 
-   "title": "Algebra I", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0122.html", 
-   "prequesites": [
-    "None"
-   ], 
-   "categories": "module firstyear"
-  }, 
-  {
-   "code": "MA1500", 
-   "layout": "post", 
-   "title": "Introduction to Probability Theory", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1500.html", 
-   "prequesites": [
-    "None"
-   ], 
-   "categories": "module firstyear"
-  }, 
-  {
    "code": "MA0123", 
    "layout": "post", 
    "title": "Analysis I", 
@@ -127,34 +358,442 @@
    "categories": "module firstyear"
   }, 
   {
-   "code": "MA0126", 
-   "layout": "post", 
-   "title": "Analysis II", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0126.html", 
-   "prequesites": [
-    "Analysis I"
-   ], 
-   "categories": "module firstyear"
-  }, 
-  {
-   "code": "MA0125", 
-   "layout": "post", 
-   "title": "Algebra II", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0125.html", 
-   "prequesites": [
-    "Algebra I"
-   ], 
-   "categories": "module firstyear"
-  }, 
-  {
-   "code": "MA1004", 
-   "layout": "post", 
-   "title": "Geometry", 
-   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma1004.html", 
+   "code": "MA0111", 
+   "layout": "module", 
+   "title": "Elementary Number Theory I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0111.html", 
    "prequesites": [
     "None"
    ], 
    "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA0122", 
+   "layout": "post", 
+   "title": "Algebra I", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0122.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module firstyear"
+  }, 
+  {
+   "code": "MA2700", 
+   "layout": "post", 
+   "title": "Numerical Analysis II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2700.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0235", 
+   "layout": "post", 
+   "title": "Elementary Fluid Dynamics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0235.html", 
+   "prequesites": [
+    "MA1300", 
+    "MA2301"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2003", 
+   "layout": "post", 
+   "title": "Complex Analysis", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2003.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2004", 
+   "layout": "post", 
+   "title": "Series and Transforms", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2004.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0212", 
+   "layout": "post", 
+   "title": "Linear Algebra", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0212.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0216", 
+   "layout": "post", 
+   "title": "Elementary Number Theory II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0216.html", 
+   "prequesites": [
+    "MA0111"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2001", 
+   "layout": "post", 
+   "title": "Calculus of Several Variables", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2001.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2005", 
+   "layout": "post", 
+   "title": "Ordinary Differential Equations", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2005.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0276", 
+   "layout": "post", 
+   "title": "Visual Basic Programming for OR", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0276.html", 
+   "prequesites": [
+    "MA1003"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0291", 
+   "layout": "post", 
+   "title": "Accountancy", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0291.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2301", 
+   "layout": "post", 
+   "title": "Vector Calculus", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2301.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0221", 
+   "layout": "post", 
+   "title": "Analysis III", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0221.html", 
+   "prequesites": [
+    "MA0123", 
+    "MA0126"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0263", 
+   "layout": "post", 
+   "title": "Introduction to Computational Statistics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0263.html", 
+   "prequesites": [
+    "MA1501", 
+    "MA2500"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2500", 
+   "layout": "post", 
+   "title": "Foundation of Probablility and Statistics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2500.html", 
+   "prequesites": [
+    "MA1500", 
+    "MA1501"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2300", 
+   "layout": "post", 
+   "title": "Mechanics II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2300.html", 
+   "prequesites": [
+    "MA1300"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0232", 
+   "layout": "post", 
+   "title": "Modelling with Differential Equations", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0232.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA0261", 
+   "layout": "post", 
+   "title": "Operational Research", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0261.html", 
+   "prequesites": [
+    "MA1500"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA2002", 
+   "layout": "post", 
+   "title": "Matrix Algebra", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma2002.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module secondyear"
+  }, 
+  {
+   "code": "MA3000", 
+   "layout": "post", 
+   "title": "Complex Function Theory", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3000.html", 
+   "prequesites": [
+    "MA2003"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3700", 
+   "layout": "post", 
+   "title": "Mathematical Methods for Data Mining", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3700.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3600", 
+   "layout": "post", 
+   "title": "Operational Research II", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3600.html", 
+   "prequesites": [
+    "MA0261"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3500", 
+   "layout": "post", 
+   "title": "Discrete Optimisation", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3500.html", 
+   "prequesites": [
+    "MA0358"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3304", 
+   "layout": "post", 
+   "title": "Methods of Applied Mathematics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3304.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0355", 
+   "layout": "post", 
+   "title": "Medical Statistics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0355.html", 
+   "prequesites": [
+    "MA2500"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3501", 
+   "layout": "post", 
+   "title": "Elements of Mathematical Statistics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3501.html", 
+   "prequesites": [
+    "MA2500"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3004", 
+   "layout": "post", 
+   "title": "Combinatorics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3004.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3301", 
+   "layout": "post", 
+   "title": "Applied Nonlinear Systems", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3301.html", 
+   "prequesites": [
+    "MA0232"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0322", 
+   "layout": "post", 
+   "title": "Knots", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0322.html", 
+   "prequesites": [
+    "MA0212"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3003", 
+   "layout": "post", 
+   "title": "Groups, Rings and Fields", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3003.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0358", 
+   "layout": "post", 
+   "title": "Mathematical Programming", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0358.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0381", 
+   "layout": "post", 
+   "title": "Survey Sampling", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0381.html", 
+   "prequesites": [
+    "MA2500"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3303", 
+   "layout": "post", 
+   "title": "Theoretical and Computational Partial Differential Equations", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3303.html", 
+   "prequesites": [
+    "MA0122", 
+    "MA0126"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3900", 
+   "layout": "post", 
+   "title": "Cyflwyniad i Addysgu Mathemateg mewn Ysgol Uwchradd", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3900.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0392", 
+   "layout": "post", 
+   "title": "Half Project", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0392.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3502", 
+   "layout": "post", 
+   "title": "Regression Analysis and Experimental Design", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3502.html", 
+   "prequesites": [
+    "MA0152"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0332", 
+   "layout": "post", 
+   "title": "Fluid Dynamics", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0332.html", 
+   "prequesites": [
+    "MA0235", 
+    "MA2301"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0367", 
+   "layout": "post", 
+   "title": "Time Series Analysis and Forecasting", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0367.html", 
+   "prequesites": [
+    "MA2500"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA0391", 
+   "layout": "post", 
+   "title": "Full Project", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma0391.html", 
+   "prequesites": [
+    "None"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3005", 
+   "layout": "post", 
+   "title": "Introduction to Functional and Fourier Analysis", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3005.html", 
+   "prequesites": [
+    "MA0212", 
+    "MA0221"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3006", 
+   "layout": "post", 
+   "title": "Introduction to Coding Theory and Data Compression", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3006.html", 
+   "prequesites": [
+    "MA0212", 
+    "MA0221"
+   ], 
+   "categories": "module thirdyear"
+  }, 
+  {
+   "code": "MA3503", 
+   "layout": "post", 
+   "title": "Stochastic Processes for Finance and Insurance", 
+   "url": "http://www.cardiff.ac.uk/maths/degreeprogrammes/modules/ma3503.html", 
+   "prequesites": [
+    "MA2500"
+   ], 
+   "categories": "module thirdyear"
   }
  ]
 }
