@@ -8,6 +8,17 @@ layout: default
   </header>
 
   <article class="post-content">
+    {% if page.prequesites contains 'None' %}
+    {% else %}
+    <h2>Prequesites modules</h2>
+    <ul>
+    {% for sitepage in site.pages %}
+      {% if page.prequesites contains sitepage.code %}
+        <li><a href={{ sitepage.url | prepend: site.baseurl }}>{{ sitepage.code }} - {{ sitepage.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+    {% endif %}
     {{ content }}
   </article>
 
