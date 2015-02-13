@@ -24,7 +24,7 @@ and you should be able to use the website
 Documentation
 =============
 
-You can find our documentation here
+You can find our documentation [here](http://module-planner.readthedocs.org/)
 
 Contributing
 ============
