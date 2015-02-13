@@ -20,6 +20,12 @@ Then ```cd module_planner``` and run the following command
 Finally and open your web browser to the address ```http://localhost:8000/main.html```
 and you should be able to use the website
 
+
+Documentation
+=============
+
+You can find our documentation here
+
 Contributing
 ============
 
