@@ -221,7 +221,7 @@ class DataManager():
 
         # Get the modules we have loaded from the site
         modules = self.getModules()
-        print modules[0]
+        #print modules[0]
 
         json_data = {'courses': [c for c in self.getCourses()], 'modules': list()}
 
@@ -244,6 +244,6 @@ class DataManager():
 
 # }}}
 
-#data_manager = DataManager('settings.conf')
-#print data_manager.getCourses()
-#data_manager.convertData()
+data_manager = DataManager('settings.conf')
+print data_manager.getCourses()
+data_manager.convertData()
