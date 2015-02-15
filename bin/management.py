@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 
 """
-This file provides various utilities for mamnaging the module planner.
+This file provides various utilities for mamanaging the module planner.
 Current features include:
 
     => Data Management
